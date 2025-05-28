@@ -1,12 +1,8 @@
 import PropTypes from "prop-types";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
-const BASE_URL = "http://localhost:9000";
+// const BASE_URL = "http://localhost:9000";
+const BASE_URL = import.meta.env.VITE_DATA_API_URL;
 
 const CitiesContext = createContext();
 
