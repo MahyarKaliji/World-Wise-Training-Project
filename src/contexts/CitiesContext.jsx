@@ -1,10 +1,5 @@
 import PropTypes from "prop-types";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -71,6 +66,7 @@ function CitiesProvider({ children }) {
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
         dispatch({ type: "cities/loaded", payload: data });
+        console.log(data);
         // setCities(data);
       } catch {
         dispatch({
@@ -96,6 +92,7 @@ function CitiesProvider({ children }) {
       // setIsLoading(true);
       const res = await fetch(`${BASE_URL}/cities/${id}`);
       const data = await res.json();
+      console.log(data);
       dispatch({ type: "city/selected", payload: data });
       // setCurrentCity(data);
     } catch {
