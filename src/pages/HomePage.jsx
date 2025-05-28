@@ -4,7 +4,7 @@ import styles from "./Homepage.module.css";
 // import "./index.css"
 
 
-export default function HomePage() {
+export default function Homepage() {
   return (
     <main className={styles.homepage}>
       <PageNav />
